@@ -1,0 +1,59 @@
+ #####Nodejs#########
+
+build on java script 
+Allows to run js on server 
+it uses v8 js engine to run js in browser 
+it takes js code and compile it to machine code
+Its a single language for both Backend and Frontend     
+
+
+     ########## ExpressJS ######
+
+-It is a Framework in nodejs.
+- for making webpages,api easily.
+- it reduces the code complexicity and save time.
+-good for requist Handling.
+-we can integrate css using express js.
+
+- almost 90% of node js application using express js since it is also an important part in nodejs.
+
+-to install express in package hit command =>sudo npm install express
+
+-Alternatives for express.js==> vanilla.js, Adonis.js, Koa, Sails.js
+ 
+#code 1
+
+const express =require('express');//define express
+const app = express(); //to exicute express
+
+//mostly for webpages we using get method,put etc
+app.get('',(req,resp)=>{
+  resp.send('Hello,this is home page');
+});
+
+//About us Page
+app.get('/about',(req,resp)=>{
+    resp.send('Hello,this is About us page');
+  });
+  app.listen(5000); //5000 is the port value
+
+
+
+#code 2
+const express =require('express');//define express
+const app = express(); //to exicute express
+
+//mostly for webpages we using get method
+app.get('',(req,resp)=>{
+    console.log("data send by browser",req.query.name);
+  resp.send('Hello,this is home page');
+});
+
+//About us Page
+app.get('/about',(req,resp)=>{
+    resp.send('Hello,this is About us page');
+  });
+  app.listen(5000);
+
+
+

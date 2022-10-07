@@ -1,0 +1,31 @@
+     ### Node js to MySQL Connection ######
+
+//Install MySQL ==> sudo npm i mysql
+//CRUDE OPERATION
+//CONNECT TO MYSQL DATABASE
+const mysql= require('mysql');
+
+const con =mysql.createConnection({
+    host:'localhost',
+    user:"root",
+    password:"Current-Root-Password",
+    database:"SampleDemo1"});
+con.connect((err)=>{
+    if(err)
+    {
+        console.warn("error");
+    }
+    else
+    {
+        console.warn("connected")
+    }
+});
+//writing query
+con.query("select * from users",(err,result)=>{
+    console.warn("result",result);
+})
+//module.exports=con;
+
+
+
+ 

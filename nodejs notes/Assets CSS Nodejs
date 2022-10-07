@@ -1,0 +1,18 @@
+########### TO link Assets or css to NodeJS ####
+
+const express =require('express');//define express
+const app = express(); //to exicute express
+
+//now we are conneting to the assests cause by default it cannot find and link assets
+// we have to add manually
+app.use('/assets',express.static('assets'));
+//mostly for webpages we using get method
+app.get('/reg',(req,resp)=>{
+ 
+  resp.sendFile(__dirname+'/register.html'); //providing file name
+  
+});
+
+  app.listen(5000);//server port
+
+ 

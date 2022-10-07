@@ -1,0 +1,8 @@
+  ##### Nodemon ####
+console.warn("try nodemon");
+console.log("hello nodemon");
+
+//to install a nodemon in ubuntu terminal ==> sudo npm i nodemon -g
+//to run on terminal ==> nodemon ./index.js
+//nodejs is async language
+console.log(200+300);

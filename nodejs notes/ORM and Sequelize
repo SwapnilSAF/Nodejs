@@ -1,0 +1,29 @@
+
+
+         ########## Object Relational Mapping ######
+
+ORM => An orm is layer between the database and application. By using an orm, a lot of hard work like creating, updating and deleting data from the database is taken care for us. 
+
+Sequelize==>
+Sequelize is a Third Party Package. 
+It is nodejs ORM tool.
+
+Its an nodejs object relational mapping library.
+
+Its map all the sequel code so we dont need to write a query or sequel code for every time.
+
+even it is automatically create table.
+
+we simply create an object and through the object we can exicute the sequel code or queries. 
+
+
+==>it is important to install=> mysql2 package
+command => npm install --save mysql2
+
+==>install the package => npm install --save sequelize
+
+
+
+
+CASCADE. It is used in conjunction with ON DELETE or ON UPDATE. It means that the child data is either deleted or updated when the parent data is deleted or updated. SET NULL. It is used in conjunction with ON DELETE or ON UPDATE.
+

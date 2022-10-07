@@ -1,0 +1,52 @@
+   ### DAta base connection ####
+
+ //import connections sql
+var con = require('./connection');
+
+const express =require('express');//define express
+const app = express(); //to exicute express
+
+//bodyParser module=> gives data in json by uncoding form url and it installed with express
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+
+//now we are conneting to the assests cause by default it cannot find and link assets
+// we have to add manually
+app.use('/assets',express.static('assets'));
+
+
+//mostly for webpages we using get method
+app.get('/reg',(req,resp)=>{
+ 
+  resp.sendFile(__dirname+'/register.html'); //providing file name
+  
+});
+
+//for method POST  we define in html we have have to define raut
+
+app.post('/reg',(req,resp)=>{
+  // now using body parser we send the data from page html to database
+  //console.log(req.body);
+  var fullname = req.body.fullname;
+  var username= req.body.username;
+  var email= req.body.email;
+  var phonenumber=req.body.phonenumber;
+  var password=req.body.password;
+  var confirmpassword=req.body.confirmpassword;
+  
+   con.connect(function(error){
+    if(error) throw error;
+
+    var sql ="INSERT INTO users(Full_Name, Username, Email, Phone_Number, Password, Confirm_Password) VALUES(?, ?, ?, ?, ?, ?)"
+      con.query(sql, [fullname, username, email, phonenumber, password, confirmpassword],function(error, result){
+       if(error) throw error;
+      resp.send('Registration Successfull'+result.insertID);
+
+      })
+   })
+
+})
+
+  app.listen(5000);//server port
+

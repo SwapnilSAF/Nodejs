@@ -1,0 +1,11 @@
+
+steps to use Sequelize in nodejs
+ 1] Install mysql2 package 
+ 2] Install Sequelize Package 
+ 3] DataBase Connection using Sequelize 
+ 4] Define Model=> use >sequelize.define< method to define model then export it 
+ 5] Import Model into main index.js File
+ 6] Use sequelize.sync() method to store all the model data into DataBase
+ 7] To insert data => Product.create method
+ 8] To fetch/retrieve all data from database => Product.findAll method 
+ 

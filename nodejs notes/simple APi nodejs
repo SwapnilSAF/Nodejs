@@ -1,0 +1,12 @@
+
+
+### simple nodejs ###
+
+//Simple API in NodeJS
+//Create server 
+const http = require('http');
+http.createServer((req,resp)=>{
+resp.writeHead(200,{'Conternt-Type':'application\json'});
+resp.write(JSON.stringify({name:'swapnil',email:'swapn@node.com'}));
+}).listen(4200);
+
